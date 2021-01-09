@@ -34,7 +34,7 @@ class Login extends Component {
 
   render() {
     return (
-      <form className="mt-3">
+      <div className="mt-3">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 mt-5 mx-auto">
@@ -78,7 +78,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
-      </form>
+      </div>
     );
   }
 }

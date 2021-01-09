@@ -24,34 +24,35 @@ def login():
         return jsonify(res)
 
     except Exception as e:
-        error={
+        error = {
             "status": 400,
             "description": f"Endpoint error {e}"
         }
-       
+
         return jsonify(error)
+
 
 @app.route('/users/register', methods=['POST'])
 @cross_origin()
 def register_users():
     try:
         entry = request.get_json()
-        
+
         first_name = entry['first_name']
         last_name = entry['last_name']
         password = entry['password']
         email = entry['email']
         db = DataBase()
-        res = db.user_register(first_name,last_name,email,password)
+        res = db.user_register(first_name, last_name, email, password)
         db.close()
         return jsonify(res)
     except Exception as e:
 
-        error={
+        error = {
             "status": 400,
             "description": f"Endpoint error {e}"
         }
-       
+
         return jsonify(error)
 
 
